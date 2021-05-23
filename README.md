@@ -1,4 +1,5 @@
 # Cowin Automate
+[![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg)](LICENSE)
 
 Automation script to collect vaccination availability data and send vaccination availability emails by utilizing Cowin API.
 
