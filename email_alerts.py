@@ -29,7 +29,7 @@ if __name__ == "__main__":
             VACCINE_AVAILABILITY_DATE, DISTRICTS, API_URL
         )
     except:
-        df = pd.Dataframe()
+        df = pd.DataFrame()
 
     is_available_45 = is_vaccine_available_45(df)
     is_available_18 = is_vaccine_available_18(df)
@@ -42,9 +42,11 @@ if __name__ == "__main__":
         html_string_18 = get_email_content_18(df)
     else:
         html_string_18 = ""
-
-    if is_available_45 or is_available_18:
-        html_to_send = html_string_18 + html_string_45
+    
+    html_to_send = html_string_18 + html_string_45
+    
+    if (is_available_45 or is_available_18) and html_to_send.strip():
+        
         send_email(
             EMAIL_FROM,
             EMAIL_TO,
@@ -53,3 +55,5 @@ if __name__ == "__main__":
             {"user_name": EMAIL_USER_NAME, "password": EMAIL_PASSWORD},
             SMTP_HOST,
         )
+    else:
+        print('Vaccine is not available....')

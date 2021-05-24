@@ -11,7 +11,7 @@ SQL_CREATE_DAILY_STATISTICS = """
         vaccine text NOT NULL,
         available_capacity integer NOT NULL,
         timestamp datetime
-        )
+        );
     """
 
 
