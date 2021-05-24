@@ -7,8 +7,7 @@ DATBASE_URL = "cowin_app.db"
 API_URL = "https://cowin.gov.in/api/v2/appointment/sessions/public/calendarByDistrict"
 VACCINE_AVAILABILITY_DATE = (date.today() + timedelta(1)).strftime("%d-%m-%Y")
 DISTRICTS = {
-    "Idukki":306,
-    #"Mumbai": 395,
+    "Mumbai": 395,
     "Thane": 392,
 }
 
