@@ -144,7 +144,6 @@ def get_email_content_18(df):
                         <br>"""
 
         for index, row in df_available_18.iterrows():
-
             html_string_18 += f"""
                 <p>{row['available_capacity']} {row['vaccine']} are available at {row['name']}
                 in {row['district_name']} for {row['min_age_limit']} and above years old.
@@ -194,13 +193,15 @@ def get_email_content_45(df):
     return html_string_45
 
 
-def send_email(from_email, to_email, subject, content, credentials, smpt_host):
+def send_email(from_email, to_email, subject, content, credentials, smtp_host):
     """
     Send email containing given content to the given addressee from the given 
     address
 
     Parameters
     ----------
+    smtp_host: str
+        The mail service host address.
     from_email : str
         The address from which the email will be sent.
     to_email : list
@@ -214,7 +215,7 @@ def send_email(from_email, to_email, subject, content, credentials, smpt_host):
 
     Returns
     -------
-    None.
+    Email sent or Failed
 
     """
     msg = EmailMessage()
@@ -226,11 +227,12 @@ def send_email(from_email, to_email, subject, content, credentials, smpt_host):
     user_name = credentials["user_name"]
     password = credentials["password"]
 
-    with smtplib.SMTP(smpt_host, port=587) as smtp_server:
+    with smtplib.SMTP(smtp_host, port=587) as smtp_server:
         smtp_server.ehlo()
         smtp_server.starttls()
         smtp_server.login(user_name, password)
-        smtp_server.send_message(msg)
+        response = smtp_server.send_message(msg)
+        return "Notification sent" if str(type(response)) == "<class 'dict'>" else "Failed to Send mail"
 
 
 def get_data_for_daily_statistics_table(df):

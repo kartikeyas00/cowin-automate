@@ -1,0 +1,23 @@
+# Database Settings
+DATBASE_URL: cowin_app.db
+
+
+# API Settings
+API_URL: https://cowin.gov.in/api/v2/appointment/sessions/public/calendarByDistrict
+VACCINE_AVAILABILITY_DATE: 0 # default: 0, format:dd-mm-yyyy
+DISTRICTS: {Mumbai: 395, Thane: 392}
+
+
+# Toggle Alerts by age
+GET_ALERTS_18: true
+GET_ALERTS_45: true
+
+
+# Email Settings
+SMTP_HOST: smtp.gmail.com
+EMAIL_FROM: youremail@gmail.com
+EMAIL_TO: ['toemail1@gmail.com', 'toemail2@gmail.com']
+EMAIL_SUBJECT: "**IMPORTANT** Vaccine Is Available"
+EMAIL_USER_NAME: youremail@gmail.com
+EMAIL_PASSWORD: yourpassword
+

@@ -16,29 +16,29 @@ $ pip install -r requirements.txt
 
 ## Usage
 
-Once installed, this is very easy to use. First, change the configurations in the `config.py` file according to your need.
+Once installed, this is very easy to use. First, change the configurations in the `config.yml` file according to your need.
 
-Then setup the sqlite3 database by running the `create_db.py` file:
+Then setup the sqlite3 database by giving `create_db` argument in `main.py` file:
 ```sh
-$ python create_db.py
+$ python main.py create_db
 ```
 
-To get the email updates, run `email_alerts.py` file:
+To get the email updates, give `email_alerts` argument to `main.py` file:
 ```sh
-$ python email_alerts.py
+$ python main.py email_alerts
 ```
 
-To collect the data in the created database, run `data_collector.py` file:
+To collect the data in the created database, give `data_collector` argument in `main.py` file:
 ```sh
-$ python data_collector.py
+$ python main.py data_collector
 ```
 
 ## Possible Use Cases
 
 There can be multiple use cases for this project:
 
-1. use `email_alerts.py` file to send vaccine availability alerts periodically by automating the script with Crontab or task scheduler in case of windows.
-2. use `data_collector.py` file to collect data periodically which can be used for research purposes or buiding a service of some kind.
+1. use `email_alerts` to send vaccine availability alerts periodically by automating the script with Crontab or task scheduler in case of windows.
+2. use `data_collector` to collect data periodically which can be used for research purposes or buiding a service of some kind.
 
 ## Contributing 
 

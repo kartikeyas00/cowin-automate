@@ -1,6 +1,11 @@
+import yaml
+import os
+
+from automation.Read_Config import DATBASE_URL
 from sqlite3 import Error
-from config import DATBASE_URL
-from utils import create_connection
+from automation.utils import create_connection
+
+
 
 
 SQL_CREATE_DAILY_STATISTICS = """
@@ -41,7 +46,7 @@ def create_table(conn, create_table_sql):
         print(e)
 
 
-if __name__ == "__main__":
+def run():
     conn = create_connection(DATBASE_URL)
 
     # create table
