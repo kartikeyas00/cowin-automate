@@ -1,6 +1,7 @@
 from sys import argv
 from automation import email_alerts, data_collector, create_db
 
+
 usage = """
 Usage:
     Once installed, this is very easy to use. First, change the configurations in the `config.py` file according to your need.
@@ -15,6 +16,7 @@ Usage:
         $ python main.py data_collector
 
     """
+
 
 if len(argv) >= 2:
     if argv[1] == "create_db":

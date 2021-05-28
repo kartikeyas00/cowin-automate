@@ -1,11 +1,6 @@
-import yaml
-import os
-
-from automation.Read_Config import DATBASE_URL
+from automation.read_config import DATBASE_URL
 from sqlite3 import Error
 from automation.utils import create_connection
-
-
 
 
 SQL_CREATE_DAILY_STATISTICS = """

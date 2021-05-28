@@ -1,6 +1,4 @@
 import pandas as pd
-
-
 from automation.utils import (
     get_vaccine_availability_data,
     get_email_content_45,
@@ -9,13 +7,11 @@ from automation.utils import (
     is_vaccine_available_18,
     send_email,
     )
-from automation.Read_Config import (
+from automation.read_config import (
     VACCINE_AVAILABILITY_DATE, DISTRICTS, API_URL, GET_ALERTS_18,
     GET_ALERTS_45, SMTP_HOST, EMAIL_FROM, EMAIL_TO, EMAIL_SUBJECT,
     EMAIL_USER_NAME, EMAIL_PASSWORD
     )
-
-
 
 
 def run():

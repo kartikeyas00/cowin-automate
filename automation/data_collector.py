@@ -1,4 +1,4 @@
-from automation.Read_Config import DATBASE_URL, VACCINE_AVAILABILITY_DATE, API_URL, DISTRICTS
+from automation.read_config import DATBASE_URL, VACCINE_AVAILABILITY_DATE, API_URL, DISTRICTS
 from automation.utils import (
     get_vaccine_availability_data,
     get_data_for_daily_statistics_table,
